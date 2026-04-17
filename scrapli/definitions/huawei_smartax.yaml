@@ -30,20 +30,24 @@ modes:
       - name: 'privileged_exec'
         instructions:
           - send_input:
-              input: 'quit'
+              input: 'return'
   - name: 'diagnose'
     prompt_pattern: '.*\(diagnose\)\%\%$'
     accessible_modes:
       - name: 'privileged_exec'
         instructions:
           - send_input:
-              input: 'quit'
+              input: 'return'
 failure_indicators:
   - '% Ambiguous command'
   - '% Incomplete command'
   - '% Invalid input detected'
   - '% Unknown command'
+  - '% Too many parameters'
+  - '% Parameter error'
   - 'Error:'
+  - 'Failure:'
+  - 'The required ONT does not exist'
 on_open_instructions:
   - enter_mode:
       requested_mode: 'privileged_exec'
