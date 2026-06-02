@@ -53,9 +53,9 @@ failure_indicators:
 on_open_instructions:
   - enter_mode:
       requested_mode: 'privileged_exec'
-  - write:
+  - send_input:
       input: 'undo smart'
-  - write:
+  - send_input:
       input: 'scroll'
 on_close_instructions:
   - enter_mode:
